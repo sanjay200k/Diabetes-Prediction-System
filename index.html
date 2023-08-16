@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Diabetes Prediction</title>
+</head>
+<body>
+    <h1>Diabetes Prediction System</h1>
+    <form method="post">
+        <label for="feature1">Feature 1:</label>
+        <input type="text" name="feature1"><br>
+        <!-- Repeat for feature2 to feature10 -->
+        <!-- ... -->
+        <button type="submit">Predict</button>
+    </form>
+    {% if result %}
+        <h2>Prediction: {{ result }}</h2>
+        {% if image %}
+            <img src="data:image/png;base64,{{ image }}" alt="Feature Importance">
+        {% endif %}
+    {% endif %}
+</body>
+</html>
