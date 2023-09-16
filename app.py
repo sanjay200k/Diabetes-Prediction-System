@@ -9,19 +9,19 @@ from sklearn.datasets import load_diabetes
 
 app = Flask(__name__)
 
-# Load the Diabetes dataset
+
 diabetes = load_diabetes()
 X = diabetes.data
 y = diabetes.target
 
-# Convert target variable to binary (1 for diabetes, 0 for non-diabetes)
+
 y = np.where(y >= 200, 1, 0)
 
-# Initialize the Random Forest classifier
+
 model = RandomForestClassifier(n_estimators=100, random_state=42)
 model.fit(X, y)
 
-@app.route("/", methods=["GET", "POST"])
+
 def index():
     result = None
     if request.method == "POST":
